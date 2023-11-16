@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 2 Alıştırma</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Vue2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ welcome('To Home Page') }}</h1>
+        <h1>{{ name }}</h1>
+        <hr>
+        <a v-bind:href="googleURL">Google'a git.</a>
+        <p v-html="sahibindenURLTag"></p>
+        <hr>
+        <p>Ben {{ age }} yaşındayım.</p>
+        <button v-on:click="addAge(1)">Yaş arttır.</button>
+        <button v-on:click="subtractAge(1)">Yaş azalt.</button>
+        <button v-on:dblclick="addAge(10)">10 Yaş Arttır.</button>
+        <button v-on:dblclick="subtractAge(10)">10 Yaş Azalt.</button>
+        <hr>
+        <div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
